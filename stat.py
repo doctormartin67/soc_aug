@@ -3,31 +3,39 @@ import numpy as np
 import pandas as pd
 from scipy import stats
 
+pd.options.display.float_format = "{:,.2f}".format
+
+def print_res(df, name, ddof=0):
+	print("---------------------------")
+	print(name + "---------")
+	des_cols = []
+	fears_cols = []
+	for key in df.keys():
+		if key.startswith(name + "_DESIRES"):
+			des_cols.append(key)
+		if key.startswith(name + "_FEARS"):
+			fears_cols.append(key)
+
+	des = df[des_cols].to_numpy()
+	fears = df[fears_cols].to_numpy()
+	both = np.append(des, fears)
+	print(df[des_cols].mean())
+	print(df[des_cols].std(ddof=ddof))
+	print((df[fears_cols]).mean())
+	print((df[fears_cols]).std(ddof=ddof))
+	print("%-18s %.2f" %("mean desires", np.nanmean(des)))
+	print("%-18s %.2f" %("mean fears", np.nanmean(fears)))
+	print("%-18s %.2f" %("mean both", np.nanmean(both)))
+	print("%-18s %.2f" %("std desires", np.nanstd(des, ddof=ddof)))
+	print("%-18s %.2f" %("std fears", np.nanstd(fears, ddof=ddof)))
+	print("%-18s %.2f" %("std both", np.nanstd(both, ddof=ddof)))
+	print("Amount considered:", len(df[name + "_DESIRES_1"]) - df[name + "_DESIRES_1"].isna().sum())
+
 def print_results(df, ddof=0):
 	r1, r2, r3 = (df["ROT_FUNC1"], df["ROT_FUNC2"], df["ROT_FUNC3"])
 	p1, p2, p3 = (df["PROT_FUNC1"], df["PROT_FUNC2"], df["PROT_FUNC3"])
 	c1, c2, c3 = (df["CONN_FUNC1"], df["CONN_FUNC2"], df["CONN_FUNC3"])
 	
-	rot_des_cols = []
-	rot_fears_cols = []
-	prot_des_cols = []
-	prot_fears_cols = []
-	conn_des_cols = []
-	conn_fears_cols = []
-	for key in df.keys():
-		if "PROT_DESIRES" in key:
-			prot_des_cols.append(key)
-		elif "ROT_DESIRES" in key:
-			rot_des_cols.append(key)
-		if "CONN_DESIRES" in key:
-			conn_des_cols.append(key)
-		if "PROT_FEARS" in key:
-			prot_fears_cols.append(key)
-		elif "ROT_FEARS" in key:
-			rot_fears_cols.append(key)
-		if "CONN_FEARS" in key:
-			conn_fears_cols.append(key)
-
 	func1 = stats.kruskal(r1, p1, c1, nan_policy="omit")
 	func2 = stats.kruskal(r2, p2, c2, nan_policy="omit")
 	func3 = stats.kruskal(r3, p3, c3, nan_policy="omit")
@@ -99,37 +107,51 @@ def print_results(df, ddof=0):
 	print(len(c2) - c2.isna().sum())
 	print(len(c3) - c3.isna().sum())
 	"""
-	rot_des = df[rot_des_cols].to_numpy()
-	rot_fears = df[rot_fears_cols].to_numpy()
-	rot = np.append(rot_des, rot_fears)
-	print(df[rot_des_cols].std(ddof=ddof))
-	print(df[prot_des_cols].std(ddof=ddof))
-	print(df[conn_des_cols].std(ddof=ddof))
-	print("rot desires", np.nanmean(rot_des))
-	print("rot fears", np.nanmean(rot_fears))
-	print("rot", np.nanmean(rot))
-	print("rot std", np.nanstd(rot, ddof=ddof))
-	print(len(df["ROT_DESIRES_1"]) - df["ROT_DESIRES_1"].isna().sum())
-	prot_des = df[prot_des_cols].to_numpy()
-	prot_fears = df[prot_fears_cols].to_numpy()
-	prot = np.append(prot_des, prot_fears)
-	print("prot desires", np.nanmean(prot_des))
-	print("prot fears", np.nanmean(prot_fears))
-	print("prot", np.nanmean(prot))
-	print("prot std", np.nanstd(prot, ddof=ddof))
-	conn_des = df[conn_des_cols].to_numpy()
-	conn_fears = df[conn_fears_cols].to_numpy()
-	conn = np.append(conn_des, conn_fears)
-	print("conn desires", np.nanmean(conn_des))
-	print("conn fears", np.nanmean(conn_fears))
-	print("conn", np.nanmean(conn))
-	print("conn std", np.nanstd(conn, ddof=ddof))
+	print_res(df, "ROT", ddof)
+	print_res(df, "PROT", ddof)
+	print_res(df, "CONN", ddof)
+
+	print()
+	print("printing all desire anovas...")
+	for i in range(1, 9):
+		rot = df["ROT" + "_DESIRES_" + str(i)].dropna()
+		prot = df["PROT" + "_DESIRES_" + str(i)].dropna()
+		conn = df["CONN" + "_DESIRES_" + str(i)].dropna()
+		deg = len(rot) + len(prot) + len(conn) - 3
+		res = stats.f_oneway(rot, prot, conn)
+		print("F(2, %d) = %.3f, p = %.3f" % (deg, res[0], res[1]))
+		res = stats.f_oneway(rot, conn)
+		print("   (rot, conn) = %.3f, p = %.3f" % (res[0], res[1]))
+		res = stats.f_oneway(conn, prot)
+		print("   (prot, conn) = %.3f, p = %.3f" % (res[0], res[1]))
+		res = stats.f_oneway(rot, prot)
+		print("   (prot, rot) = %.3f, p = %.3f" % (res[0], res[1]))
+	print()
+	print("printing all fear anovas...")
+	for i in range(1, 7):
+		if 5 == i:
+			key = "_FEARS_" + "DANGER"
+		else:
+			key = "_FEARS_" + str(i)
+			
+		rot = df["ROT" + key].dropna()
+		prot = df["PROT" + key].dropna()
+		conn = df["CONN" + key].dropna()
+		deg = len(rot) + len(prot) + len(conn) - 3
+		res = stats.f_oneway(rot, prot, conn)
+		print("F(2, %d) = %.3f, p = %.3f" % (deg, res[0], res[1]))
+		res = stats.f_oneway(rot, conn)
+		print("   (rot, conn) = %.3f, p = %.3f" % (res[0], res[1]))
+		res = stats.f_oneway(conn, prot)
+		print("   (prot, conn) = %.3f, p = %.3f" % (res[0], res[1]))
+		res = stats.f_oneway(rot, prot)
+		print("   (prot, rot) = %.3f, p = %.3f" % (res[0], res[1]))
 
 if "__main__" == __name__:
 	df = pd.read_excel("SOCIAL IMPACT QUESTIONNAIRE - manip.xlsx",
 	sheet_name="python_data",
 	index_col=0)
-	print(df)
+	#print(df)
 	print_results(df)
 	df = df.drop([83, 88, 89, 90, 91, 92, 93, 94])
 	print("---------------------------")
