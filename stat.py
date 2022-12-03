@@ -9,6 +9,12 @@ def print_exit(a):
 	print(a)
 	sys.exit(0)
 
+def convert_to_1d(df):
+	ret = []
+	for l in df.values.tolist():
+		ret += l
+	return ret
+
 def print_wc(df, name, ddof=0):
 	print("---------------------------")
 	print(name + "---------")
@@ -31,10 +37,18 @@ def print_wc(df, name, ddof=0):
 
 	warmth = df[colw].to_numpy()
 	comp = df[colc].to_numpy()
+	print(df[colw].mean())
+	print(df[colw].std(ddof=ddof))
+	print(df[colc].mean())
+	print(df[colc].std(ddof=ddof))
 	print("%-18s %.2f" %("mean warmth", np.nanmean(warmth)))
 	print("%-18s %.2f" %("mean competence", np.nanmean(comp)))
 	print("%-18s %.2f" %("std warmth", np.nanstd(warmth, ddof=ddof)))
 	print("%-18s %.2f" %("std competence", np.nanstd(comp, ddof=ddof)))
+	print("Amount considered:", len(df[name + "_WC_1"]) - df[name + "_WC_1"].isna().sum())
+	w = convert_to_1d(df[colw].dropna())
+	c = convert_to_1d(df[colc].dropna())
+	return w, c
 	
 
 def print_res(df, name, ddof=0):
@@ -62,6 +76,8 @@ def print_res(df, name, ddof=0):
 	print("%-18s %.2f" %("std fears", np.nanstd(fears, ddof=ddof)))
 	print("%-18s %.2f" %("std both", np.nanstd(both, ddof=ddof)))
 	print("Amount considered:", len(df[name + "_DESIRES_1"]) - df[name + "_DESIRES_1"].isna().sum())
+	return (convert_to_1d(df[des_cols].dropna()) +
+	convert_to_1d(df[fears_cols].dropna()))
 
 def print_results(df, ddof=0):
 	r1, r2, r3 = (df["ROT_FUNC1"], df["ROT_FUNC2"], df["ROT_FUNC3"])
@@ -139,9 +155,12 @@ def print_results(df, ddof=0):
 	print(len(c2) - c2.isna().sum())
 	print(len(c3) - c3.isna().sum())
 	"""
-	print_res(df, "ROT", ddof)
-	print_res(df, "PROT", ddof)
-	print_res(df, "CONN", ddof)
+	rot = print_res(df, "ROT", ddof)
+	prot = print_res(df, "PROT", ddof)
+	conn = print_res(df, "CONN", ddof)
+	deg = len(rot) + len(prot) + len(conn) - 3
+	res = stats.f_oneway(rot, prot, conn)
+	print("F(2, %d) = %.3f, p = %.3f" % (deg, res[0], res[1]))
 
 	print()
 	print("printing all desire anovas...")
@@ -181,9 +200,19 @@ def print_results(df, ddof=0):
 
 	print()
 	print("printing all the warmth and c's...")
-	print_wc(df, "ROT", ddof)
-	print_wc(df, "PROT", ddof)
-	print_wc(df, "CONN", ddof)
+	w_rot, c_rot = print_wc(df, "ROT", ddof)
+	w_prot, c_prot = print_wc(df, "PROT", ddof)
+	w_conn, c_conn = print_wc(df, "CONN", ddof)
+	deg = len(w_rot) + len(w_prot) + len(w_conn) - 3
+	res = stats.f_oneway(w_rot, w_prot, w_conn)
+	print("w: F(2, %d) = %.3f, p = %.3f" % (deg, res[0], res[1]))
+	deg = len(c_rot) + len(c_prot) + len(c_conn) - 3
+	res = stats.f_oneway(c_rot, c_prot, c_conn)
+	print("c: F(2, %d) = %.3f, p = %.3f" % (deg, res[0], res[1]))
+	tuk = stats.tukey_hsd(w_rot, w_prot, w_conn)
+	print(tuk)
+	tuk = stats.tukey_hsd(c_rot, c_prot, c_conn)
+	print(tuk)
 
 if "__main__" == __name__:
 	df = pd.read_excel("SOCIAL IMPACT QUESTIONNAIRE - manip.xlsx",
@@ -192,7 +221,9 @@ if "__main__" == __name__:
 	#print(df)
 	print_results(df)
 	df = df.drop([83, 88, 89, 90, 91, 92, 93, 94])
-	print("---------------------------")
+	print("#############################################################")
+	print("#############################################################")
 	print("above is jill's, below is update database")
-	print("---------------------------")
+	print("#############################################################")
+	print("#############################################################")
 	print_results(df, ddof=1)
