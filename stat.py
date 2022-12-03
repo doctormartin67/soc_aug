@@ -5,6 +5,38 @@ from scipy import stats
 
 pd.options.display.float_format = "{:,.2f}".format
 
+def print_exit(a):
+	print(a)
+	sys.exit(0)
+
+def print_wc(df, name, ddof=0):
+	print("---------------------------")
+	print(name + "---------")
+	ignore = (1, 2, 3, 4)
+	w = (5, 7, 8, 9)
+	c = (6, 10, 11, 12)
+	colw = []
+	colc = []
+	for key in df.keys():
+		if key.startswith(name + "_WC"):
+			if int(key[-1]) in ignore and not key[-2].isdigit():
+				continue
+			if int(key[-1]) in w:
+				colw.append(key)
+			if int(key[-1]) in c:
+				colc.append(key)
+			tmp = key[-2] + key[-1]
+			if tmp.isdigit() and int(tmp) in c:
+				colc.append(key)
+
+	warmth = df[colw].to_numpy()
+	comp = df[colc].to_numpy()
+	print("%-18s %.2f" %("mean warmth", np.nanmean(warmth)))
+	print("%-18s %.2f" %("mean competence", np.nanmean(comp)))
+	print("%-18s %.2f" %("std warmth", np.nanstd(warmth, ddof=ddof)))
+	print("%-18s %.2f" %("std competence", np.nanstd(comp, ddof=ddof)))
+	
+
 def print_res(df, name, ddof=0):
 	print("---------------------------")
 	print(name + "---------")
@@ -146,6 +178,12 @@ def print_results(df, ddof=0):
 		print("   (prot, conn) = %.3f, p = %.3f" % (res[0], res[1]))
 		res = stats.f_oneway(rot, prot)
 		print("   (prot, rot) = %.3f, p = %.3f" % (res[0], res[1]))
+
+	print()
+	print("printing all the warmth and c's...")
+	print_wc(df, "ROT", ddof)
+	print_wc(df, "PROT", ddof)
+	print_wc(df, "CONN", ddof)
 
 if "__main__" == __name__:
 	df = pd.read_excel("SOCIAL IMPACT QUESTIONNAIRE - manip.xlsx",
