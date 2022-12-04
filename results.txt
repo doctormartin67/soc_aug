@@ -1,0 +1,717 @@
+all 3:
+KruskalResult(statistic=36.03522095923119, pvalue=1.49641203236871e-08)
+KruskalResult(statistic=14.052131796340214, pvalue=0.0008884200494365627)
+KruskalResult(statistic=0.5570887042226431, pvalue=0.7568846975710932)
+
+function 1:
+prot and conn:
+KruskalResult(statistic=20.229719874155005, pvalue=6.867764707852645e-06)
+rot and conn:
+KruskalResult(statistic=32.062978921860804, pvalue=1.4925460445733917e-08)
+rot and prot:
+KruskalResult(statistic=1.6441081530250004, pvalue=0.19976274380113546)
+
+function 2:
+prot and conn:
+KruskalResult(statistic=0.2876159366149631, pvalue=0.591752360212312)
+rot and conn:
+KruskalResult(statistic=5.920078686875224, pvalue=0.014969290013223767)
+rot and prot:
+KruskalResult(statistic=15.036995515088885, pvalue=0.0001054241517627404)
+
+function 3:
+prot and conn:
+KruskalResult(statistic=0.2542256781364977, pvalue=0.6141152395598686)
+rot and conn:
+KruskalResult(statistic=0.5231866241426566, pvalue=0.4694855152762296)
+rot and prot:
+KruskalResult(statistic=0.05936670812059597, pvalue=0.8074996982060306)
+
+rotator means 7.09, 4.83, 6.92
+rotator std 2.04, 2.47, 2.24
+protector means 6.58, 6.49, 7.06
+protector std 2.25, 2.04, 2.06
+connector means 4.72, 6.06, 7.17
+connector std 2.26, 2.99, 2.29
+---------------------------
+ROT---------
+ROT_DESIRES_1   4.05
+ROT_DESIRES_2   3.26
+ROT_DESIRES_3   3.15
+ROT_DESIRES_4   3.37
+ROT_DESIRES_5   4.14
+ROT_DESIRES_6   3.45
+ROT_DESIRES_7   4.29
+ROT_DESIRES_8   4.86
+dtype: float64
+ROT_DESIRES_1   1.09
+ROT_DESIRES_2   1.14
+ROT_DESIRES_3   1.26
+ROT_DESIRES_4   1.05
+ROT_DESIRES_5   0.86
+ROT_DESIRES_6   1.27
+ROT_DESIRES_7   1.17
+ROT_DESIRES_8   0.91
+dtype: float64
+ROT_FEARS_1        5.20
+ROT_FEARS_2        5.06
+ROT_FEARS_3        4.86
+ROT_FEARS_4        4.92
+ROT_FEARS_DANGER   4.06
+ROT_FEARS_6        4.06
+dtype: float64
+ROT_FEARS_1        0.83
+ROT_FEARS_2        0.97
+ROT_FEARS_3        1.09
+ROT_FEARS_4        1.03
+ROT_FEARS_DANGER   1.39
+ROT_FEARS_6        1.32
+dtype: float64
+mean desires       3.82
+mean fears         4.69
+mean both          4.20
+std desires        1.24
+std fears          1.21
+std both           1.30
+Amount considered: 65
+---------------------------
+PROT---------
+PROT_DESIRES_1   4.21
+PROT_DESIRES_2   3.61
+PROT_DESIRES_3   3.45
+PROT_DESIRES_4   3.76
+PROT_DESIRES_5   4.29
+PROT_DESIRES_6   3.48
+PROT_DESIRES_7   4.58
+PROT_DESIRES_8   4.95
+dtype: float64
+PROT_DESIRES_1   1.11
+PROT_DESIRES_2   1.25
+PROT_DESIRES_3   1.29
+PROT_DESIRES_4   1.07
+PROT_DESIRES_5   0.87
+PROT_DESIRES_6   1.20
+PROT_DESIRES_7   0.92
+PROT_DESIRES_8   0.88
+dtype: float64
+PROT_FEARS_1        5.12
+PROT_FEARS_2        5.00
+PROT_FEARS_3        4.76
+PROT_FEARS_4        4.95
+PROT_FEARS_DANGER   3.73
+PROT_FEARS_6        4.27
+dtype: float64
+PROT_FEARS_1        0.93
+PROT_FEARS_2        1.04
+PROT_FEARS_3        1.09
+PROT_FEARS_4        0.91
+PROT_FEARS_DANGER   1.51
+PROT_FEARS_6        1.34
+dtype: float64
+mean desires       4.04
+mean fears         4.64
+mean both          4.30
+std desires        1.20
+std fears          1.26
+std both           1.26
+Amount considered: 66
+---------------------------
+CONN---------
+CONN_DESIRES_1   3.92
+CONN_DESIRES_2   2.78
+CONN_DESIRES_3   2.55
+CONN_DESIRES_4   3.18
+CONN_DESIRES_5   3.74
+CONN_DESIRES_6   3.28
+CONN_DESIRES_7   3.46
+CONN_DESIRES_8   4.55
+dtype: float64
+CONN_DESIRES_1   1.03
+CONN_DESIRES_2   1.41
+CONN_DESIRES_3   1.36
+CONN_DESIRES_4   1.20
+CONN_DESIRES_5   1.22
+CONN_DESIRES_6   1.26
+CONN_DESIRES_7   1.45
+CONN_DESIRES_8   1.23
+dtype: float64
+CONN_FEARS_1        5.14
+CONN_FEARS_2        5.06
+CONN_FEARS_3        4.77
+CONN_FEARS_4        4.72
+CONN_FEARS_DANGER   3.85
+CONN_FEARS_6        3.75
+dtype: float64
+CONN_FEARS_1        0.99
+CONN_FEARS_2        1.12
+CONN_FEARS_3        1.17
+CONN_FEARS_4        1.21
+CONN_FEARS_DANGER   1.46
+CONN_FEARS_6        1.38
+dtype: float64
+mean desires       3.43
+mean fears         4.55
+mean both          3.91
+std desires        1.41
+std fears          1.35
+std both           1.49
+Amount considered: 65
+F(2, 2741) = 19.883, p = 0.000
+
+printing all desire anovas...
+F(2, 193) = 1.175, p = 0.311
+   (rot, conn) = 0.433, p = 0.512
+   (prot, conn) = 2.359, p = 0.127
+   (prot, rot) = 0.737, p = 0.392
+F(2, 193) = 6.773, p = 0.001
+   (rot, conn) = 4.431, p = 0.037
+   (prot, conn) = 12.248, p = 0.001
+   (prot, rot) = 2.663, p = 0.105
+F(2, 193) = 7.971, p = 0.000
+   (rot, conn) = 6.730, p = 0.011
+   (prot, conn) = 14.873, p = 0.000
+   (prot, rot) = 1.795, p = 0.183
+F(2, 193) = 4.492, p = 0.012
+   (rot, conn) = 0.860, p = 0.356
+   (prot, conn) = 8.162, p = 0.005
+   (prot, rot) = 4.326, p = 0.040
+F(2, 193) = 5.250, p = 0.006
+   (rot, conn) = 4.612, p = 0.034
+   (prot, conn) = 8.729, p = 0.004
+   (prot, rot) = 0.969, p = 0.327
+F(2, 193) = 0.511, p = 0.601
+   (rot, conn) = 0.575, p = 0.450
+   (prot, conn) = 0.925, p = 0.338
+   (prot, rot) = 0.032, p = 0.859
+F(2, 193) = 15.006, p = 0.000
+   (rot, conn) = 12.727, p = 0.001
+   (prot, conn) = 27.277, p = 0.000
+   (prot, rot) = 2.332, p = 0.129
+F(2, 193) = 2.735, p = 0.067
+   (rot, conn) = 2.594, p = 0.110
+   (prot, conn) = 4.555, p = 0.035
+   (prot, rot) = 0.349, p = 0.556
+
+printing all fear anovas...
+F(2, 193) = 0.131, p = 0.877
+   (rot, conn) = 0.146, p = 0.703
+   (prot, conn) = 0.010, p = 0.919
+   (prot, rot) = 0.259, p = 0.612
+F(2, 193) = 0.074, p = 0.928
+   (rot, conn) = 0.000, p = 1.000
+   (prot, conn) = 0.104, p = 0.748
+   (prot, rot) = 0.120, p = 0.730
+F(2, 193) = 0.166, p = 0.847
+   (rot, conn) = 0.212, p = 0.646
+   (prot, conn) = 0.003, p = 0.953
+   (prot, rot) = 0.293, p = 0.589
+F(2, 193) = 0.908, p = 0.405
+   (rot, conn) = 1.017, p = 0.315
+   (prot, conn) = 1.510, p = 0.221
+   (prot, rot) = 0.034, p = 0.854
+F(2, 193) = 0.872, p = 0.420
+   (rot, conn) = 0.730, p = 0.394
+   (prot, conn) = 0.206, p = 0.651
+   (prot, rot) = 1.705, p = 0.194
+F(2, 193) = 2.409, p = 0.093
+   (rot, conn) = 1.656, p = 0.200
+   (prot, conn) = 4.678, p = 0.032
+   (prot, rot) = 0.809, p = 0.370
+
+printing all the warmth and c's...
+printing all w's anovas...
+F(2, 193) = 0.681, p = 0.508
+   (rot, conn) = 1.196, p = 0.276
+   (prot, conn) = 0.736, p = 0.393
+   (prot, rot) = 0.046, p = 0.830
+F(2, 193) = 0.663, p = 0.517
+   (rot, conn) = 0.996, p = 0.320
+   (prot, conn) = 0.926, p = 0.338
+   (prot, rot) = 0.001, p = 0.980
+F(2, 193) = 4.973, p = 0.008
+   (rot, conn) = 7.618, p = 0.007
+   (prot, conn) = 6.410, p = 0.013
+   (prot, rot) = 0.078, p = 0.781
+F(2, 193) = 3.445, p = 0.034
+   (rot, conn) = 4.586, p = 0.034
+   (prot, conn) = 5.064, p = 0.026
+   (prot, rot) = 0.033, p = 0.857
+printing all c's anovas...
+F(2, 193) = 5.901, p = 0.003
+   (rot, conn) = 12.220, p = 0.001
+   (prot, conn) = 3.691, p = 0.057
+   (prot, rot) = 2.177, p = 0.143
+F(2, 193) = 3.457, p = 0.033
+   (rot, conn) = 4.544, p = 0.035
+   (prot, conn) = 5.604, p = 0.019
+   (prot, rot) = 0.019, p = 0.891
+F(2, 193) = 1.023, p = 0.361
+   (rot, conn) = 1.660, p = 0.200
+   (prot, conn) = 1.361, p = 0.245
+   (prot, rot) = 0.008, p = 0.930
+F(2, 193) = 7.825, p = 0.001
+   (rot, conn) = 9.833, p = 0.002
+   (prot, conn) = 13.592, p = 0.000
+   (prot, rot) = 0.268, p = 0.606
+---------------------------
+ROT---------
+ROT_WC_5   6.22
+ROT_WC_7   4.43
+ROT_WC_8   5.91
+ROT_WC_9   2.97
+dtype: float64
+ROT_WC_5   1.22
+ROT_WC_7   1.34
+ROT_WC_8   1.21
+ROT_WC_9   1.36
+dtype: float64
+ROT_WC_6    3.77
+ROT_WC_10   3.60
+ROT_WC_11   3.63
+ROT_WC_12   3.89
+dtype: float64
+ROT_WC_6    1.38
+ROT_WC_10   1.57
+ROT_WC_11   1.54
+ROT_WC_12   1.52
+dtype: float64
+mean warmth        4.88
+mean competence    3.72
+std warmth         1.82
+std competence     1.51
+Amount considered: 65
+---------------------------
+PROT---------
+PROT_WC_5   6.17
+PROT_WC_7   4.42
+PROT_WC_8   5.85
+PROT_WC_9   2.92
+dtype: float64
+PROT_WC_5   1.34
+PROT_WC_7   1.55
+PROT_WC_8   1.20
+PROT_WC_9   1.46
+dtype: float64
+PROT_WC_6    3.39
+PROT_WC_10   3.64
+PROT_WC_11   3.61
+PROT_WC_12   4.03
+dtype: float64
+PROT_WC_6    1.51
+PROT_WC_10   1.43
+PROT_WC_11   1.66
+PROT_WC_12   1.51
+dtype: float64
+mean warmth        4.84
+mean competence    3.67
+std warmth         1.90
+std competence     1.55
+Amount considered: 66
+---------------------------
+CONN---------
+CONN_WC_5   5.95
+CONN_WC_7   4.69
+CONN_WC_8   5.26
+CONN_WC_9   3.55
+dtype: float64
+CONN_WC_5   1.47
+CONN_WC_7   1.62
+CONN_WC_8   1.43
+CONN_WC_9   1.71
+dtype: float64
+CONN_WC_6    2.89
+CONN_WC_10   3.00
+CONN_WC_11   3.26
+CONN_WC_12   3.06
+dtype: float64
+CONN_WC_6    1.46
+CONN_WC_10   1.62
+CONN_WC_11   1.69
+CONN_WC_12   1.48
+dtype: float64
+mean warmth        4.87
+mean competence    3.05
+std warmth         1.79
+std competence     1.57
+Amount considered: 65
+w: F(2, 781) = 0.031, p = 0.969
+c: F(2, 781) = 15.037, p = 0.000
+Tukey's HSD Pairwise Group Comparisons (95.0% Confidence Interval)
+Comparison  Statistic  p-value  Lower CI  Upper CI
+ (0 - 1)      0.040     0.967    -0.338     0.418
+ (0 - 2)      0.015     0.995    -0.364     0.395
+ (1 - 0)     -0.040     0.967    -0.418     0.338
+ (1 - 2)     -0.024     0.987    -0.402     0.353
+ (2 - 0)     -0.015     0.995    -0.395     0.364
+ (2 - 1)      0.024     0.987    -0.353     0.402
+
+Tukey's HSD Pairwise Group Comparisons (95.0% Confidence Interval)
+Comparison  Statistic  p-value  Lower CI  Upper CI
+ (0 - 1)      0.056     0.908    -0.261     0.373
+ (0 - 2)      0.669     0.000     0.351     0.987
+ (1 - 0)     -0.056     0.908    -0.373     0.261
+ (1 - 2)      0.613     0.000     0.296     0.930
+ (2 - 0)     -0.669     0.000    -0.987    -0.351
+ (2 - 1)     -0.613     0.000    -0.930    -0.296
+
+#############################################################
+#############################################################
+above is jill's, below is update database
+#############################################################
+#############################################################
+all 3:
+KruskalResult(statistic=34.257136413914985, pvalue=3.640469063680287e-08)
+KruskalResult(statistic=13.811540745224336, pvalue=0.0010019868776006378)
+KruskalResult(statistic=0.3533825051980461, pvalue=0.8380384867888274)
+
+function 1:
+prot and conn:
+KruskalResult(statistic=19.32988082747178, pvalue=1.0997184905749811e-05)
+rot and conn:
+KruskalResult(statistic=30.584851214359393, pvalue=3.1957928761915914e-08)
+rot and prot:
+KruskalResult(statistic=1.4795866974739507, pvalue=0.2238391985104885)
+
+function 2:
+prot and conn:
+KruskalResult(statistic=0.21181567360700895, pvalue=0.645348004678036)
+rot and conn:
+KruskalResult(statistic=6.200665655368286, pvalue=0.012770227683049248)
+rot and prot:
+KruskalResult(statistic=14.452112044624489, pvalue=0.0001437685482980426)
+
+function 3:
+prot and conn:
+KruskalResult(statistic=0.1311373099791468, pvalue=0.7172557393019131)
+rot and conn:
+KruskalResult(statistic=0.337220694951356, pvalue=0.5614378995462528)
+rot and prot:
+KruskalResult(statistic=0.061235047255928696, pvalue=0.8045544400985132)
+
+rotator means 7.08, 4.89, 6.97
+rotator std 2.09, 2.46, 2.25
+protector means 6.58, 6.52, 7.09
+protector std 2.29, 2.08, 2.09
+connector means 4.73, 6.14, 7.16
+connector std 2.24, 2.96, 2.32
+---------------------------
+ROT---------
+ROT_DESIRES_1   4.05
+ROT_DESIRES_2   3.26
+ROT_DESIRES_3   3.15
+ROT_DESIRES_4   3.37
+ROT_DESIRES_5   4.14
+ROT_DESIRES_6   3.45
+ROT_DESIRES_7   4.29
+ROT_DESIRES_8   4.86
+dtype: float64
+ROT_DESIRES_1   1.10
+ROT_DESIRES_2   1.15
+ROT_DESIRES_3   1.27
+ROT_DESIRES_4   1.05
+ROT_DESIRES_5   0.86
+ROT_DESIRES_6   1.28
+ROT_DESIRES_7   1.18
+ROT_DESIRES_8   0.92
+dtype: float64
+ROT_FEARS_1        5.20
+ROT_FEARS_2        5.06
+ROT_FEARS_3        4.86
+ROT_FEARS_4        4.92
+ROT_FEARS_DANGER   4.06
+ROT_FEARS_6        4.06
+dtype: float64
+ROT_FEARS_1        0.83
+ROT_FEARS_2        0.98
+ROT_FEARS_3        1.10
+ROT_FEARS_4        1.04
+ROT_FEARS_DANGER   1.40
+ROT_FEARS_6        1.33
+dtype: float64
+mean desires       3.82
+mean fears         4.69
+mean both          4.20
+std desires        1.24
+std fears          1.22
+std both           1.30
+Amount considered: 65
+---------------------------
+PROT---------
+PROT_DESIRES_1   4.20
+PROT_DESIRES_2   3.58
+PROT_DESIRES_3   3.43
+PROT_DESIRES_4   3.74
+PROT_DESIRES_5   4.26
+PROT_DESIRES_6   3.46
+PROT_DESIRES_7   4.58
+PROT_DESIRES_8   4.94
+dtype: float64
+PROT_DESIRES_1   1.12
+PROT_DESIRES_2   1.26
+PROT_DESIRES_3   1.30
+PROT_DESIRES_4   1.08
+PROT_DESIRES_5   0.85
+PROT_DESIRES_6   1.20
+PROT_DESIRES_7   0.93
+PROT_DESIRES_8   0.88
+dtype: float64
+PROT_FEARS_1        5.14
+PROT_FEARS_2        5.00
+PROT_FEARS_3        4.75
+PROT_FEARS_4        4.95
+PROT_FEARS_DANGER   3.72
+PROT_FEARS_6        4.31
+dtype: float64
+PROT_FEARS_1        0.93
+PROT_FEARS_2        1.06
+PROT_FEARS_3        1.10
+PROT_FEARS_4        0.93
+PROT_FEARS_DANGER   1.54
+PROT_FEARS_6        1.33
+dtype: float64
+mean desires       4.03
+mean fears         4.65
+mean both          4.29
+std desires        1.20
+std fears          1.26
+std both           1.27
+Amount considered: 65
+---------------------------
+CONN---------
+CONN_DESIRES_1   3.95
+CONN_DESIRES_2   2.81
+CONN_DESIRES_3   2.58
+CONN_DESIRES_4   3.20
+CONN_DESIRES_5   3.77
+CONN_DESIRES_6   3.30
+CONN_DESIRES_7   3.50
+CONN_DESIRES_8   4.56
+dtype: float64
+CONN_DESIRES_1   1.01
+CONN_DESIRES_2   1.41
+CONN_DESIRES_3   1.37
+CONN_DESIRES_4   1.21
+CONN_DESIRES_5   1.22
+CONN_DESIRES_6   1.27
+CONN_DESIRES_7   1.44
+CONN_DESIRES_8   1.25
+dtype: float64
+CONN_FEARS_1        5.14
+CONN_FEARS_2        5.05
+CONN_FEARS_3        4.75
+CONN_FEARS_4        4.70
+CONN_FEARS_DANGER   3.81
+CONN_FEARS_6        3.72
+dtype: float64
+CONN_FEARS_1        1.01
+CONN_FEARS_2        1.13
+CONN_FEARS_3        1.18
+CONN_FEARS_4        1.22
+CONN_FEARS_DANGER   1.46
+CONN_FEARS_6        1.37
+dtype: float64
+mean desires       3.46
+mean fears         4.53
+mean both          3.92
+std desires        1.40
+std fears          1.35
+std both           1.48
+Amount considered: 64
+F(2, 2713) = 18.615, p = 0.000
+
+printing all desire anovas...
+F(2, 191) = 0.863, p = 0.423
+   (rot, conn) = 0.250, p = 0.618
+   (prot, conn) = 1.718, p = 0.192
+   (prot, rot) = 0.626, p = 0.430
+F(2, 191) = 5.931, p = 0.003
+   (rot, conn) = 3.927, p = 0.050
+   (prot, conn) = 10.731, p = 0.001
+   (prot, rot) = 2.330, p = 0.129
+F(2, 191) = 7.094, p = 0.001
+   (rot, conn) = 6.168, p = 0.014
+   (prot, conn) = 13.201, p = 0.000
+   (prot, rot) = 1.516, p = 0.220
+F(2, 191) = 3.894, p = 0.022
+   (rot, conn) = 0.691, p = 0.407
+   (prot, conn) = 7.032, p = 0.009
+   (prot, rot) = 3.893, p = 0.051
+F(2, 191) = 4.365, p = 0.014
+   (rot, conn) = 4.031, p = 0.047
+   (prot, conn) = 7.192, p = 0.008
+   (prot, rot) = 0.668, p = 0.415
+F(2, 191) = 0.342, p = 0.711
+   (rot, conn) = 0.444, p = 0.506
+   (prot, conn) = 0.574, p = 0.450
+   (prot, rot) = 0.005, p = 0.944
+F(2, 191) = 14.069, p = 0.000
+   (rot, conn) = 11.716, p = 0.001
+   (prot, conn) = 25.933, p = 0.000
+   (prot, rot) = 2.447, p = 0.120
+F(2, 191) = 2.409, p = 0.093
+   (rot, conn) = 2.417, p = 0.122
+   (prot, conn) = 3.925, p = 0.050
+   (prot, rot) = 0.238, p = 0.627
+
+printing all fear anovas...
+F(2, 191) = 0.092, p = 0.912
+   (rot, conn) = 0.134, p = 0.715
+   (prot, conn) = 0.000, p = 0.990
+   (prot, rot) = 0.157, p = 0.692
+F(2, 191) = 0.060, p = 0.942
+   (rot, conn) = 0.006, p = 0.937
+   (prot, conn) = 0.059, p = 0.809
+   (prot, rot) = 0.118, p = 0.732
+F(2, 191) = 0.204, p = 0.816
+   (rot, conn) = 0.307, p = 0.580
+   (prot, conn) = 0.000, p = 0.985
+   (prot, rot) = 0.310, p = 0.579
+F(2, 191) = 1.060, p = 0.349
+   (rot, conn) = 1.223, p = 0.271
+   (prot, conn) = 1.737, p = 0.190
+   (prot, rot) = 0.032, p = 0.859
+F(2, 191) = 0.930, p = 0.396
+   (rot, conn) = 0.979, p = 0.324
+   (prot, conn) = 0.115, p = 0.735
+   (prot, rot) = 1.722, p = 0.192
+F(2, 191) = 3.108, p = 0.047
+   (rot, conn) = 2.068, p = 0.153
+   (prot, conn) = 6.102, p = 0.015
+   (prot, rot) = 1.107, p = 0.295
+
+printing all the warmth and c's...
+printing all w's anovas...
+F(2, 191) = 0.737, p = 0.480
+   (rot, conn) = 1.336, p = 0.250
+   (prot, conn) = 0.742, p = 0.391
+   (prot, rot) = 0.073, p = 0.787
+F(2, 191) = 0.866, p = 0.422
+   (rot, conn) = 1.201, p = 0.275
+   (prot, conn) = 1.290, p = 0.258
+   (prot, rot) = 0.015, p = 0.904
+F(2, 191) = 4.705, p = 0.010
+   (rot, conn) = 7.407, p = 0.007
+   (prot, conn) = 5.798, p = 0.017
+   (prot, rot) = 0.131, p = 0.718
+F(2, 191) = 3.884, p = 0.022
+   (rot, conn) = 5.265, p = 0.023
+   (prot, conn) = 5.685, p = 0.019
+   (prot, rot) = 0.034, p = 0.854
+printing all c's anovas...
+F(2, 191) = 5.439, p = 0.005
+   (rot, conn) = 11.391, p = 0.001
+   (prot, conn) = 3.088, p = 0.081
+   (prot, rot) = 2.255, p = 0.136
+F(2, 191) = 2.967, p = 0.054
+   (rot, conn) = 4.070, p = 0.046
+   (prot, conn) = 4.669, p = 0.033
+   (prot, rot) = 0.003, p = 0.954
+F(2, 191) = 0.993, p = 0.372
+   (rot, conn) = 1.741, p = 0.189
+   (prot, conn) = 1.153, p = 0.285
+   (prot, rot) = 0.048, p = 0.828
+F(2, 191) = 7.184, p = 0.001
+   (rot, conn) = 9.078, p = 0.003
+   (prot, conn) = 12.513, p = 0.001
+   (prot, rot) = 0.266, p = 0.607
+---------------------------
+ROT---------
+ROT_WC_5   6.22
+ROT_WC_7   4.43
+ROT_WC_8   5.91
+ROT_WC_9   2.97
+dtype: float64
+ROT_WC_5   1.23
+ROT_WC_7   1.35
+ROT_WC_8   1.22
+ROT_WC_9   1.37
+dtype: float64
+ROT_WC_6    3.77
+ROT_WC_10   3.60
+ROT_WC_11   3.63
+ROT_WC_12   3.89
+dtype: float64
+ROT_WC_6    1.39
+ROT_WC_10   1.58
+ROT_WC_11   1.56
+ROT_WC_12   1.53
+dtype: float64
+mean warmth        4.88
+mean competence    3.72
+std warmth         1.83
+std competence     1.51
+Amount considered: 65
+---------------------------
+PROT---------
+PROT_WC_5   6.15
+PROT_WC_7   4.40
+PROT_WC_8   5.83
+PROT_WC_9   2.92
+dtype: float64
+PROT_WC_5   1.36
+PROT_WC_7   1.56
+PROT_WC_8   1.21
+PROT_WC_9   1.48
+dtype: float64
+PROT_WC_6    3.38
+PROT_WC_10   3.62
+PROT_WC_11   3.57
+PROT_WC_12   4.03
+dtype: float64
+PROT_WC_6    1.53
+PROT_WC_10   1.44
+PROT_WC_11   1.66
+PROT_WC_12   1.53
+dtype: float64
+mean warmth        4.83
+mean competence    3.65
+std warmth         1.90
+std competence     1.55
+Amount considered: 65
+---------------------------
+CONN---------
+CONN_WC_5   5.94
+CONN_WC_7   4.72
+CONN_WC_8   5.27
+CONN_WC_9   3.59
+dtype: float64
+CONN_WC_5   1.49
+CONN_WC_7   1.63
+CONN_WC_8   1.45
+CONN_WC_9   1.71
+dtype: float64
+CONN_WC_6    2.92
+CONN_WC_10   3.03
+CONN_WC_11   3.25
+CONN_WC_12   3.09
+dtype: float64
+CONN_WC_6    1.46
+CONN_WC_10   1.62
+CONN_WC_11   1.72
+CONN_WC_12   1.48
+dtype: float64
+mean warmth        4.88
+mean competence    3.07
+std warmth         1.78
+std competence     1.57
+Amount considered: 64
+w: F(2, 773) = 0.072, p = 0.931
+c: F(2, 773) = 13.636, p = 0.000
+Tukey's HSD Pairwise Group Comparisons (95.0% Confidence Interval)
+Comparison  Statistic  p-value  Lower CI  Upper CI
+ (0 - 1)      0.054     0.940    -0.325     0.432
+ (0 - 2)      0.002     1.000    -0.378     0.382
+ (1 - 0)     -0.054     0.940    -0.432     0.325
+ (1 - 2)     -0.052     0.945    -0.432     0.328
+ (2 - 0)     -0.002     1.000    -0.382     0.378
+ (2 - 1)      0.052     0.945    -0.328     0.432
+
+Tukey's HSD Pairwise Group Comparisons (95.0% Confidence Interval)
+Comparison  Statistic  p-value  Lower CI  Upper CI
+ (0 - 1)      0.073     0.852    -0.245     0.391
+ (0 - 2)      0.649     0.000     0.330     0.968
+ (1 - 0)     -0.073     0.852    -0.391     0.245
+ (1 - 2)      0.576     0.000     0.257     0.895
+ (2 - 0)     -0.649     0.000    -0.968    -0.330
+ (2 - 1)     -0.576     0.000    -0.895    -0.257
+
