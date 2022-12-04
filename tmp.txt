@@ -1,0 +1,35 @@
+printing all the warmth and c's...
+printing all w's anovas...
+F(2, 193) = 0.681; p = 0.508
+   (rot, conn) = 1.196; p = 0.276
+   (prot, conn) = 0.736; p = 0.393
+   (prot, rot) = 0.046; p = 0.830
+F(2, 193) = 0.663; p = 0.517
+   (rot, conn) = 0.996; p = 0.320
+   (prot, conn) = 0.926; p = 0.338
+   (prot, rot) = 0.001; p = 0.980
+F(2, 193) = 4.973; p = 0.008
+   (rot, conn) = 7.618; p = 0.007
+   (prot, conn) = 6.410; p = 0.013
+   (prot, rot) = 0.078; p = 0.781
+F(2, 193) = 3.445; p = 0.034
+   (rot, conn) = 4.586; p = 0.034
+   (prot, conn) = 5.064; p = 0.026
+   (prot, rot) = 0.033; p = 0.857
+printing all c's anovas...
+F(2, 193) = 5.901; p = 0.003
+   (rot, conn) = 12.220; p = 0.001
+   (prot, conn) = 3.691; p = 0.057
+   (prot, rot) = 2.177; p = 0.143
+F(2, 193) = 3.457; p = 0.033
+   (rot, conn) = 4.544; p = 0.035
+   (prot, conn) = 5.604; p = 0.019
+   (prot, rot) = 0.019; p = 0.891
+F(2, 193) = 1.023; p = 0.361
+   (rot, conn) = 1.660; p = 0.200
+   (prot, conn) = 1.361; p = 0.245
+   (prot, rot) = 0.008; p = 0.930
+F(2, 193) = 7.825; p = 0.001
+   (rot, conn) = 9.833; p = 0.002
+   (prot, conn) = 13.592; p = 0.000
+   (prot, rot) = 0.268; p = 0.606

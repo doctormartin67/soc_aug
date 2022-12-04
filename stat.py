@@ -200,6 +200,38 @@ def print_results(df, ddof=0):
 
 	print()
 	print("printing all the warmth and c's...")
+
+	print("printing all w's anovas...")
+	w = (5, 7, 8, 9)
+	for i in w:
+		rot = df["ROT" + "_WC_" + str(i)].dropna()
+		prot = df["PROT" + "_WC_" + str(i)].dropna()
+		conn = df["CONN" + "_WC_" + str(i)].dropna()
+		deg = len(rot) + len(prot) + len(conn) - 3
+		res = stats.f_oneway(rot, prot, conn)
+		print("F(2, %d) = %.3f, p = %.3f" % (deg, res[0], res[1]))
+		res = stats.f_oneway(rot, conn)
+		print("   (rot, conn) = %.3f, p = %.3f" % (res[0], res[1]))
+		res = stats.f_oneway(conn, prot)
+		print("   (prot, conn) = %.3f, p = %.3f" % (res[0], res[1]))
+		res = stats.f_oneway(rot, prot)
+		print("   (prot, rot) = %.3f, p = %.3f" % (res[0], res[1]))
+	print("printing all c's anovas...")
+	c = (6, 10, 11, 12)
+	for i in c:
+		rot = df["ROT" + "_WC_" + str(i)].dropna()
+		prot = df["PROT" + "_WC_" + str(i)].dropna()
+		conn = df["CONN" + "_WC_" + str(i)].dropna()
+		deg = len(rot) + len(prot) + len(conn) - 3
+		res = stats.f_oneway(rot, prot, conn)
+		print("F(2, %d) = %.3f, p = %.3f" % (deg, res[0], res[1]))
+		res = stats.f_oneway(rot, conn)
+		print("   (rot, conn) = %.3f, p = %.3f" % (res[0], res[1]))
+		res = stats.f_oneway(conn, prot)
+		print("   (prot, conn) = %.3f, p = %.3f" % (res[0], res[1]))
+		res = stats.f_oneway(rot, prot)
+		print("   (prot, rot) = %.3f, p = %.3f" % (res[0], res[1]))
+
 	w_rot, c_rot = print_wc(df, "ROT", ddof)
 	w_prot, c_prot = print_wc(df, "PROT", ddof)
 	w_conn, c_conn = print_wc(df, "CONN", ddof)
